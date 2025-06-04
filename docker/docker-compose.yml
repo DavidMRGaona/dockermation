@@ -366,8 +366,6 @@ services:
         - ./laravel-echo-server/laravel-echo-server.json:/app/laravel-echo-server.json:ro
       ports:
         - "${LARAVEL_ECHO_SERVER_PORT}:6001"
-      links:
-        - redis
       networks:
         - frontend
         - backend
