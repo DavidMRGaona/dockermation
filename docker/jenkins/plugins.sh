@@ -1,5 +1,7 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
+# Ensure the script exits on errors
+set -e
 # Parse a support-core plugin -style txt file as specification for jenkins plugins to be installed
 # in the reference directory, so user can define a derived Docker image with just :
 #
