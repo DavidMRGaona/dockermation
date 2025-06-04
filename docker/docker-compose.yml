@@ -206,7 +206,10 @@ services:
 
 ### MariaDB ##############################################
     mariadb:
-      build: ./mariadb
+      build:
+        context: ./mariadb
+        args:
+          - MARIADB_VERSION=${MARIADB_VERSION}
       volumes:
         - ${DATA_PATH_HOST}/mariadb:/var/lib/mysql
         - ${MARIADB_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
@@ -236,7 +239,10 @@ services:
 
 ### Redis ################################################
     redis:
-      build: ./redis
+      build:
+        context: ./redis
+        args:
+          - REDIS_VERSION=${REDIS_VERSION}
       volumes:
         - ${DATA_PATH_HOST}/redis:/data
       ports:
@@ -246,7 +252,10 @@ services:
 
 ### Memcached ############################################
     memcached:
-      build: ./memcached
+      build:
+        context: ./memcached
+        args:
+          - MEMCACHED_VERSION=${MEMCACHED_VERSION}
       volumes:
         - ${DATA_PATH_HOST}/memcached:/var/lib/memcached
       ports:
@@ -258,7 +267,10 @@ services:
 
 ### phpMyAdmin ###########################################
     phpmyadmin:
-      build: ./phpmyadmin
+      build:
+        context: ./phpmyadmin
+        args:
+          - PHPMYADMIN_VERSION=${PHPMYADMIN_VERSION}
       environment:
         - PMA_ARBITRARY=1
         - MYSQL_USER=${PMA_USER}
@@ -313,6 +325,8 @@ services:
     certbot:
       build:
         context: ./certbot
+        args:
+          - CERTBOT_BASE_IMAGE_VERSION=${CERTBOT_BASE_IMAGE_VERSION}
       volumes:
         - ./data/certbot/certs/:/var/certs
         - ./certbot/letsencrypt/:${APP_CODE_PATH_CONTAINER}/letsencrypt

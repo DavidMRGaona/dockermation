@@ -175,10 +175,12 @@ MYSQL_ENTRYPOINT_INITDB=./mysql/docker-entrypoint-initdb.d
 
 ### REDIS #################################################
 
+REDIS_VERSION=6.2
 REDIS_PORT=6379
 
 ### MARIADB ###############################################
 
+MARIADB_VERSION=10.5
 MARIADB_DATABASE=default
 MARIADB_USER=default
 MARIADB_PASSWORD=secret
@@ -200,6 +202,7 @@ ELASTICSEARCH_HOST_TRANSPORT_PORT=9300
 
 ### MEMCACHED #############################################
 
+MEMCACHED_VERSION=1.6
 MEMCACHED_HOST_PORT=11211
 
 ### ADMINER ###############################################
@@ -209,6 +212,7 @@ ADM_INSTALL_MSSQL=false
 
 ### PHP MY ADMIN ##########################################
 
+PHPMYADMIN_VERSION=5.2
 # Accepted values: mariadb - mysql
 
 PMA_DB_ENGINE=mysql
@@ -230,6 +234,10 @@ MAILDEV_SMTP_PORT=25
 JENKINS_HOST_HTTP_PORT=8090
 JENKINS_HOST_SLAVE_AGENT_PORT=50000
 JENKINS_HOME=./jenkins/jenkins_home
+
+### CERTBOT ###############################################
+
+CERTBOT_BASE_IMAGE_VERSION=0.12
 
 ### LARAVEL ECHO SERVER ###################################
 

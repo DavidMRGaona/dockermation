@@ -1,4 +1,5 @@
-FROM redis:latest
+ARG REDIS_VERSION=6.2
+FROM redis:${REDIS_VERSION}
 
 LABEL maintainer="David M. Ramos <DavidMRGaona@gmail.com>"
 

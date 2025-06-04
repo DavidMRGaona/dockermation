@@ -1,4 +1,5 @@
-FROM phusion/baseimage:latest
+ARG CERTBOT_BASE_IMAGE_VERSION=0.12
+FROM phusion/baseimage:${CERTBOT_BASE_IMAGE_VERSION}
 
 LABEL maintainer="David M. Ramos <DavidMRGaona@gmail.com>"
 

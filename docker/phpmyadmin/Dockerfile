@@ -1,4 +1,5 @@
-FROM phpmyadmin/phpmyadmin
+ARG PHPMYADMIN_VERSION=5.2
+FROM phpmyadmin/phpmyadmin:${PHPMYADMIN_VERSION}
 
 LABEL maintainer="David M. Ramos <DavidMRGaona@gmail.com>"
 
