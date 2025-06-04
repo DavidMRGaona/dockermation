@@ -127,10 +127,14 @@ function envGenerate {
     echo "PUSHER_APP_KEY=$pusher_app_key" >> .env
     echo "PUSHER_APP_SECRET=$pusher_app_secret" >> .env
     echo "" >> .env
-    echo "JWT_SECRET=AS0JYVUOQl5V3a6m6DSpFotyl73p3IbQ" >> .env
+    jwt_secret=$(openssl rand -hex 32)
+    fcm_server_key=$(openssl rand -hex 32)
+    fcm_sender_id=$(LC_ALL=C tr -dc '0-9' </dev/urandom | head -c 12)
+
+    echo "JWT_SECRET=$jwt_secret" >> .env
     echo "" >> .env
-    echo "FCM_SERVER_KEY=AAAArashmZw:APA91bE-DUzYL9e380dL3t-UySVkHlLL2XrPdnOwi0VvTbXfmdW-nZCADYkywZphG-sdEJedaL1leh3xMR7yA6SChpwUJaQ6T2oZwOAL6A4m6-HNoDZcuJ0Sw-l0wxlXCf3G37XhslU0" >> .env
-    echo "FCM_SENDER_ID=745900448156" >> .env
+    echo "FCM_SERVER_KEY=$fcm_server_key" >> .env
+    echo "FCM_SENDER_ID=$fcm_sender_id" >> .env
 }
 
 function initDocker {
