@@ -216,8 +216,10 @@ RUN if [ ${INSTALL_XDEBUG} = false -a ${INSTALL_BLACKFIRE} = true ]; then \
 
 ARG INSTALL_WORKSPACE_SSH=false
 
-COPY insecure_id_rsa /tmp/id_rsa
-COPY insecure_id_rsa.pub /tmp/id_rsa.pub
+# Provide your own SSH key pair if you enable workspace SSH.
+# Generate one with:
+#   ssh-keygen -t rsa -b 4096 -N '' -f id_rsa
+# and copy `id_rsa` and `id_rsa.pub` into /tmp before building.
 
 RUN if [ ${INSTALL_WORKSPACE_SSH} = true ]; then \
     rm -f /etc/service/sshd/down && \

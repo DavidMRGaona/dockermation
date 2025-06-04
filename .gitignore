@@ -1,1 +1,4 @@
 .DS_Store
+# Ignore SSH keys
+docker/workspace/insecure_id_rsa*
+docker/workspace/id_rsa*
