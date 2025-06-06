@@ -8,7 +8,7 @@
 
 ARG PHP_VERSION=${PHP_VERSION}
 
-FROM laradock/workspace:2.2-${PHP_VERSION}
+FROM laradock/workspace:3.0-${PHP_VERSION}
 
 LABEL maintainer="David M. Ramos <DavidMRGaona@gmail.com>"
 
