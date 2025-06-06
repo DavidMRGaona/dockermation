@@ -1,0 +1,25 @@
+# Ignore git repository
+.git
+.git/**
+
+# Ignore logs
+logs
+**/logs
+*.log
+**/*.log
+
+# Ignore temporary files
+tmp
+temp
+.cache
+*.swp
+*~
+
+# Ignore tests and documentation
+tests
+**/tests
+docs
+**/docs
+
+# Ignore system files
+.DS_Store
