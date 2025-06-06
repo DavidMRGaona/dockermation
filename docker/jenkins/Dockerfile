@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM eclipse-temurin:17-jdk
 
 LABEL maintainer="David M. Ramos <DavidMRGaona@gmail.com>"
 
@@ -38,11 +38,11 @@ COPY init.groovy /usr/share/jenkins/ref/init.groovy.d/tcp-slave-agent-port.groov
 
 # jenkins version being bundled in this docker image
 ARG JENKINS_VERSION
-ENV JENKINS_VERSION ${JENKINS_VERSION:-2.89.2}
+ENV JENKINS_VERSION ${JENKINS_VERSION:-2.426.1}
 
 # jenkins.war checksum, download will be validated using it
-# 2.89.2
-ARG JENKINS_SHA=014f669f32bc6e925e926e260503670b32662f006799b133a031a70a794c8a14
+# 2.426.1
+ARG JENKINS_SHA=0000000000000000000000000000000000000000000000000000000000000000
 
 
 # Can be used to customize where jenkins.war get downloaded from
